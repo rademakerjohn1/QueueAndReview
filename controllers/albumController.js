@@ -13,7 +13,7 @@ module.exports = {
   // Return listened albums in descending order by create time
   findListened: function(req, res) {
     db.Album.find({ listened: true})
-    .sort({createdAt: 'desc'})
+    .sort({updatedAt: 'desc'})
     .then(dbAlbum => res.send(dbAlbum))
     .catch(err => res.status(422).json(err));
   },
