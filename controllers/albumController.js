@@ -14,7 +14,6 @@ module.exports = {
     .catch(err => res.status(422).json(err));
   },
   findAll: function(req, res) {
-    console.log("fartski")
     db.Album.find(req.query).sort({createdAt: 'desc'})
       .then(dbAlbum => res.json(dbAlbum))
       .catch(err => res.status(422).json(err));
