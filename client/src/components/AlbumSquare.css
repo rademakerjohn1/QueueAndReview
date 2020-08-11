@@ -1,0 +1,11 @@
+.queue-card {
+    padding: 5px;
+    border: none;
+    width: 33.33%;
+    opacity: .9
+}
+
+.queue-card:hover {
+    opacity: initial;
+}
+

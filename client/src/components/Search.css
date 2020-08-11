@@ -1,0 +1,13 @@
+#search-form .form-group {
+    margin: auto;
+    text-align: center;
+}
+
+#search-form {
+    margin-top: 25px;
+}
+
+#search-container {
+    padding: 0px 25px;
+    margin-top: 75px;
+}

@@ -1,0 +1,20 @@
+textarea {
+    width: 100%;
+}
+
+label {
+    display: block;
+}
+
+.react-datepicker-wrapper {
+    display: block !important;
+}
+
+.star-ratings {
+    display: block !important;
+}
+
+.btn-success {
+    padding: 0px 15px;
+    border-radius: 5px;
+}

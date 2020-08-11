@@ -1,0 +1,17 @@
+.page-header {
+    text-align: center;
+    margin: auto;
+}
+
+#queue-wrapper .page-header + p {
+    text-align: center;
+    margin: auto;
+}
+
+.queue-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90vw;
+    margin: auto;
+    padding: 50px;
+}

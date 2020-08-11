@@ -1,0 +1,77 @@
+.search-result-card {
+    background-color: transparent;
+    width: 90vw;
+    padding: 25px;
+    margin: auto;
+    margin-bottom: 50px;
+    border: none;
+    border-bottom: 1px dotted grey;
+}
+
+.card h1 {
+    margin: 0px;
+}
+
+.description-text {
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.description-toggle {
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.search-result-card .card-img {
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+    top: 10px;
+}
+
+
+.sub-row {
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.save-btn, .allmusic-logo {
+    height: 30px;
+}
+
+.save-btn, .edit-btn, .delete-btn {
+    margin-right: 10px;
+    padding: 0px 15px;
+    border-radius: 5px;
+}
+
+
+
+ol {
+    margin-top: 15px;
+    padding-left: 15px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    margin-left: 5px;
+    display: inline-block;
+    padding: 3px;
+  }
+
+
+.down {
+transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+position: relative;
+bottom: 2.5px
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    position: relative;
+    top: 2px;
+  }
