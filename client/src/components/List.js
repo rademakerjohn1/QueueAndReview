@@ -1,6 +1,7 @@
 import React from "react";
 import ListItem from './ListItem';
-// import { Collapse } from 'react-collapse';
+
+// Renders ordered list that maps a ListItem of each track in props.TrackList
 
 function List(props) {
 

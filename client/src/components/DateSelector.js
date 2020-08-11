@@ -3,6 +3,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 
+// React DatePicker package lets user select date of album listening
+// filterDate prevents future dates from being chosen
+
 function DateSelector(props) {
 
         return (

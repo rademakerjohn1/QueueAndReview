@@ -14,7 +14,7 @@ class Edit extends React.Component {
         rating: 0
     }
 
-
+    // Set this.state.album as props received from Queue component
     componentDidMount() {
         if (!this.props.location.state) {
             return 
@@ -30,21 +30,26 @@ class Edit extends React.Component {
         });
     }
 
+    // Toggle this.state.edit to render form for editing
     handleEdit() {
         this.setState({edit: !this.state.edit})
     }
 
+    // Set date to this.state.dateListened on DatePicker change
     handleDate = date => {
         this.setState({
           dateListened: date
         });
       };
 
+
+    // Remove album from database on button click
     async handleRemove(album) {
         await API.removeAlbum(album);
         window.location = "/queue"
     }
 
+    // On click, add up to 3 tracks from album to this.state.selectedTracks
     handleTrackSave(event) {
         if (this.state.selectedTracks.length >= 3) return;
         const song = this.state.album.tracks.find(track => track === event.target.getAttribute("data"))
@@ -52,12 +57,14 @@ class Edit extends React.Component {
         this.setState({selectedTracks: joined})
     }
 
+    // Set this.state.rating as current rating from Star component 
     changeRating(number) {
         this.setState({
           rating: number
         })
       }
 
+    // Add user feedback to this.state.album, make API call to update album, return to queue
     async submitForm(event) {
         event.preventDefault();
         await this.setState(prevState => {
@@ -74,7 +81,9 @@ class Edit extends React.Component {
         window.location = "/queue"
     }
 
-
+    // If !this.state.edit, render AlbumView with "remove album" button as child
+    // Else, render Album with EditForm as child
+    
     render() {
         return (
             !this.state.edit ? 

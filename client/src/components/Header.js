@@ -3,6 +3,8 @@ import { Jumbotron } from 'reactstrap';
 import Navigation from './Nav'
 import './Header.css';
 
+// Render jumbotron header with Navigation
+
 function Header() {
   return (
     <div>

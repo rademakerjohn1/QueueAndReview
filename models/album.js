@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const albumSchema = new Schema({
-    albumId: { type: String },
-    title: { type: String },
-    artist: { type: String },
+    albumId: { type: String, required: true },
+    title: { type: String, required: true },
+    artist: { type: String, required: true},
     tracks: { type: [String], required: true },
     year: { type: Number, required: true },
     thumbnail: { type: String },
@@ -15,9 +15,6 @@ const albumSchema = new Schema({
     review: { type: String },
     selectedTracks: { type: [String] },
     rating: { type: Number },
-
-
-
     // discogsId: { type: String, required: true, unique: true },
     // wikiDataId: { type: String, required: true, unique: true },
 },

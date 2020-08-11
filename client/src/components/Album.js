@@ -3,6 +3,9 @@ import './Album.css'
 import AlbumImage from './AlbumImage'
 import AlbumHeader from './AlbumHeader';
 
+// Renders a row containing album art and heading (title, artist and year).
+// Children prop used to represent variable content (album details, edit form or user feedback)
+
 function Album(props) {
 
         return (

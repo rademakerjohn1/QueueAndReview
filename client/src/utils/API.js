@@ -2,24 +2,21 @@ import axios from "axios";
 
 export default {
 
+  // Axios requests for TheAudioDB API
   getAlbums: function(q) {
-    return axios.get("/api/artist", { params: { q: "s=" + q } });
+    return axios.get("/api/artist", {  params: { q }});
   },
 
   getTracks: function(q) {
-    return axios.get("/api/tracks", { params: { q: "m=" + q } });
+    return axios.get("/api/tracks", { params: { q }});
   },
 
+  // Axios requests for database
   saveAlbum: function(album) {
-    return axios.post("/api/albums", album, { headers: {
-        'Content-type': 'application/json'
-      }
+    return axios.post("/api/albums", album, { 
+      headers: { 'Content-type': 'application/json'}
     });
   },
-
-  // getSavedAlbums: function() {
-  //   return axios.get("/api/albums");
-  // },
 
   getUnlistenedAlbums: function() {
     return axios.get("/api/albums/unlistened")
@@ -41,5 +38,4 @@ export default {
   removeAlbum: function(album) {
     return axios.delete(`/api/albums/${album._id}`, album);
   },
-
 };

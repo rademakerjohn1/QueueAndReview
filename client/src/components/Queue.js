@@ -14,13 +14,14 @@ class Queue extends Component {
         this.getUnlistenedAlbums();
     }
     
+    // Get albums from database where "listened" is false, set results to this.state.albums
     async getUnlistenedAlbums() {
         const albums = await API.getUnlistenedAlbums();
         this.setState({albums: albums.data})
     };
 
-  
-
+    // Render "empty queue" message if no unlistened albums
+    // Else, map AlbumSquares of each listened album that links to "/edit"
     render() {
         console.log('state ', this.state)
         return (

@@ -4,6 +4,9 @@ import List from './List'
 import Stars from './Stars'
 import DateSelector from './DateSelector'
 
+
+// Render form for user feedback
+
 function EditForm(props) {
 
     return (

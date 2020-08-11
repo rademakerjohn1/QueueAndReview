@@ -2,6 +2,8 @@ import React from 'react';
 import Description from './Description';
 import List from './List'
 
+// Renders album description and tracklist for search results in Search and "view" mode in Queue
+
 function AlbumContent(props) {
     return (
         <div>

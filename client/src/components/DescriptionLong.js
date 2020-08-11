@@ -1,7 +1,10 @@
 import React from 'react'
 
+// "this.state.open" is changed on click to toggle full description visibility
+// If !this.state.open, render first 250 characters of description
+// Else, render full description
 
-class LongDescription extends React.Component {
+class DescriptionLong extends React.Component {
 
     constructor(props) {
         super(props);
@@ -28,4 +31,4 @@ class LongDescription extends React.Component {
     }
 }
 
-export default LongDescription;
+export default DescriptionLong;

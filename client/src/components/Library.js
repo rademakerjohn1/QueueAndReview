@@ -3,6 +3,7 @@ import API from '../utils/API';
 import './Queue.css'
 import AlbumSquare from './AlbumSquare'
 
+
 class Library extends Component {
 
     state = {
@@ -13,15 +14,15 @@ class Library extends Component {
     componentDidMount() {
         this.getListenedAlbums();
     }
-    
+
+    // Get albums from database where "listened" is true, set results to this.state.albums
     async getListenedAlbums() {
         const albums = await API.getListenedAlbums();
-        console.log(albums)
         this.setState({albums: albums.data})
     };
 
-  
-
+    // Render "empty library" message if no listened albums
+    // Else map AlbumSquares of each listened album that links to "/view"
     render() {
         console.log('state ', this.state)
         return (
