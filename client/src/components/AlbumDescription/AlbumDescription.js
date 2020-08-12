@@ -1,5 +1,5 @@
 import React from 'react'
-import AlbumDescriptionLong from './AlbumDescriptionLong'
+import AlbumDescriptionLong from '../AlbumDescriptionLong/AlbumDescriptionLong'
 
 // If album description is over 250 characters, render DescriptionLong.
 // Else render full description

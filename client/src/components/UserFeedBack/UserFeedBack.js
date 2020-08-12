@@ -1,7 +1,8 @@
 import React from 'react';
 import './UserFeedBack.css'
-import Stars from './Stars'
-import AlbumButtonRow from './AlbumButtonRow'
+import Stars from '../Stars/Stars'
+import AlbumButtonRow from '../AlbumButtonRow/AlbumButtonRow'
+import AlbumButton from '../AlbumButton/AlbumButton'
 
 
 function UserFeedBack(props) {
@@ -24,15 +25,19 @@ function UserFeedBack(props) {
                         {props.tracks.map(track => <li>{track}</li>)}
                     </ul>
                 }
-                <AlbumButtonRow buttonClass={"edit-btn btn-primary"} onClick={props.edit} buttonText={"Edit Album"}>
-                    <button className={'delete-btn btn-danger'} onClick={props.remove}>Remove Album</button>
+                <AlbumButtonRow>
+                    <AlbumButton
+                        buttonClass={"edit-btn btn-primary"}
+                        buttonText={"Edit Album"}
+                        onClick={props.edit} />
+                    <AlbumButton
+                        buttonClass={"delete-btn btn-danger"}
+                        buttonText={"Remove Album"}
+                        onClick={props.delete} />
                 </AlbumButtonRow>
             </div>
-
-
         </div>
     )
 }
 
 export default UserFeedBack;
-

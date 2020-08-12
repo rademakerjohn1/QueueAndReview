@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import API from '../utils/API';
 import './Search.css'
-import Album from './Album'
-import AlbumHeader from './AlbumHeader'
-import AlbumButtonRow from './AlbumButtonRow'
-import AlbumDescription from './AlbumDescription'
-import AlbumTrackList from './AlbumTrackList'
+import Album from '../components/Album/Album'
+import AlbumHeader from '../components/AlbumHeader/AlbumHeader'
+import AlbumButtonRow from '../components/AlbumButtonRow/AlbumButtonRow'
+import AlbumButton from '../components/AlbumButton/AlbumButton'
+import AlbumDescription from '../components/AlbumDescription/AlbumDescription'
+import AlbumTrackList from '../components/AlbumTrackList/AlbumTrackList'
+import AllMusicLogo from '../components/AllMusicLogo/AllMusicLogo'
 
 
 class Search extends Component {
@@ -84,20 +86,21 @@ class Search extends Component {
                 <div className="row" id="search-container">
                     {this.state.results.map(item => (
                         <Album
-                            key={item.idAlbum}
-                            img={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}
-                            idAlbum={item.idAlbum}>
+                            albumId={item.idAlbum}
+                            thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}>
                             <AlbumHeader 
                                 title={item.strAlbum}
                                 artist={item.strArtist}
                                 year={item.intYearReleased} />
-                            <AlbumButtonRow 
-                                buttonClass={"save-btn"}
-                                buttonText={"Add To Queue"}
-                                allMusicID={item.strAllMusicID}
-                                onClick={() => this.handleSave(item)} />
+                            <AlbumButtonRow>
+                                <AlbumButton
+                                    buttonClass={"btn-primary save-btn"}
+                                    buttonText={"Add To Queue"}
+                                    onClick={() => this.handleSave(item)} />
+                                <AllMusicLogo allMusicID={item.strAllMusicID} />
+                            </AlbumButtonRow>
                             <AlbumDescription description={item.strDescriptionEN} />
-                            <AlbumTrackList text={"View Tracklist"} trackList={item.tracks} />
+                            <AlbumTrackList text={"View Tracklist"} tracks={item.tracks} />
                         </Album>
                     ))}
                 </div>

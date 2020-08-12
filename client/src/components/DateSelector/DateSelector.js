@@ -8,17 +8,17 @@ import moment from 'moment';
 
 function DateSelector(props) {
 
-        return (
-            <DatePicker
-            value={props.dateListened}
-            selected={props.dateListened}
-            onChange={props.onChange}
-            filterDate = {(date) => {
-              return moment() > date;
-            }}
-          />
-    )
-
+  return (
+    <DatePicker
+      value={props.dateListened}
+      selected={props.dateListened}
+      onChange={props.onChange}
+      filterDate={(date) => {
+        return moment() > date;
+      }}
+    />
+  )
+  
 }
 
 export default DateSelector;

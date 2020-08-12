@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AlbumTrack from './AlbumTrack'
+import AlbumTrack from '../AlbumTrack/AlbumTrack'
 
 class AlbumTrackList extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class AlbumTrackList extends Component {
                 <p onClick={(e) => this.toggleTrackList(e)}>{this.props.text}<i className={`arrow ${!this.state.open ? "down" : "up"}`}></i></p>
                 {this.state.open && 
                     <ol>
-                        {this.props.trackList.map(track => 
+                        {this.props.tracks.map(track => 
                             <AlbumTrack onClick={this.props.onClick} songTitle={track} /> )}
                     </ol>
                 }

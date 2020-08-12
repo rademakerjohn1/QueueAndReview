@@ -1,8 +1,8 @@
 import React from 'react';
 import './EditForm.css'
-import AlbumTrackList from './AlbumTrackList'
-import Stars from './Stars'
-import DateSelector from './DateSelector'
+import AlbumTrackList from '../AlbumTrackList/AlbumTrackList'
+import Stars from '../Stars/Stars'
+import DateSelector from '../DateSelector/DateSelector'
 
 
 // Render form for user feedback
@@ -16,9 +16,9 @@ function EditForm(props) {
             </label>
 
             <label for="review">What did you think of the album?</label>
-            <textarea name="review" value={props.review} onChange={props.onChange} id="review"></textarea>
+            <textarea name="review" value={props.review} onChange={props.onChange} id="review" placeholder={props.originalReview}></textarea>
 
-            <AlbumTrackList text={"Pick up to three favorite songs"} onClick={props.onClick} trackList={props.trackList} />
+            <AlbumTrackList text={"Pick up to three favorite songs"} onClick={props.onClick} tracks={props.tracks} />
 
             <label>Rating out of 5:
             <Stars rating={props.rating} changeRating={props.changeRating} />

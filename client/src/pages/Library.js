@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from '../utils/API';
 import './Queue.css'
-import GridSquare from './GridSquare'
+import GridSquare from '../components/GridSquare/GridSquare'
 
 
 class Library extends Component {

@@ -1,9 +1,9 @@
 import React from 'react';
-import API from '../utils/API';
-import Album from './Album';
-import AlbumHeader from './AlbumHeader'
-import UserFeedBack from './UserFeedBack'
-import EditForm from './EditForm'
+import API from '../../utils/API';
+import Album from '../Album/Album';
+import AlbumHeader from '../AlbumHeader/AlbumHeader'
+import UserFeedBack from '../UserFeedBack/UserFeedBack'
+import EditForm from '../EditForm/EditForm'
 
 
 class LibraryAlbum extends React.Component {
@@ -35,11 +35,20 @@ class LibraryAlbum extends React.Component {
         });
     }
 
+    handleEdit() {
+        this.setState({edit: !this.state.edit})
+    }
+
     handleDate = date => {
         this.setState({
           dateListened: date
         });
       };
+    
+    async handleDelete(album) {
+        await API.removeAlbum(album);
+        window.location = "/library"
+    }
 
     handleTrackSave(event) {
         if (this.state.selectedTracks.length >= 3) return;
@@ -71,23 +80,12 @@ class LibraryAlbum extends React.Component {
         window.location = "/library"
     }
 
-    handleEdit() {
-        this.setState({edit: !this.state.edit})
-    }
-
-    async handleRemove(album) {
-        await API.removeAlbum(album);
-        window.location = "/library"
-    }
-
     render() {
         return (
             !this.state.edit ?
                 <Album
-                    idAlbum={this.state.album.albumId}
-                    img={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}
-                    id={this.state.album.id}>
-
+                    albumId={this.state.album.albumId}
+                    thumbnail={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}>
                     <UserFeedBack
                         title={this.state.album.title}
                         edit={() => this.handleEdit()} 
@@ -97,14 +95,13 @@ class LibraryAlbum extends React.Component {
                         rating={this.state.album.rating}
                         tracks={this.state.album.selectedTracks}
                         dateListened={this.state.album.dateListened}
-                        remove={() => this.handleRemove(this.state.album)}
+                        delete={() => this.handleDelete(this.state.album)}
                     />
                 </Album>
                 : 
                 <Album
-                idAlbum={this.state.album.albumId}
-                img={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}
-                id={this.state.album.id}>
+                    albumId={this.state.album.albumId}
+                    thumbnail={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}>
                 <AlbumHeader 
                         title={this.state.album.title} 
                         artist={this.state.album.artist} 
@@ -112,9 +109,10 @@ class LibraryAlbum extends React.Component {
                 <EditForm
                     dateListened={this.state.dateListened}
                     review={this.state.review}
-                    rating={this.state.rating}
-                    trackList={this.state.album.tracks}
+                    rating={this.state.album.rating}
+                    tracks={this.state.album.tracks}
                     onClick={(event) => this.handleTrackSave(event)}
+                    originalReview={this.state.album.review}
                     onChange={this.handleChange}
                     handleDate={this.handleDate}
                     changeRating={(event) => this.changeRating(event)} 

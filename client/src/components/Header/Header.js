@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
-import Navigation from './Nav'
+import Navigation from '../Nav/Nav'
 import './Header.css';
 
 // Render jumbotron header with Navigation

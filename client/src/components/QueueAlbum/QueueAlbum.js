@@ -1,11 +1,13 @@
 import React from 'react';
-import API from '../utils/API';
-import Album from './Album';
-import AlbumHeader from './AlbumHeader'
-import AlbumButtonRow from './AlbumButtonRow'
-import AlbumDescription from './AlbumDescription'
-import AlbumTrackList from './AlbumTrackList'
-import EditForm from './EditForm'
+import API from '../../utils/API';
+import Album from '../Album/Album';
+import AlbumHeader from '../AlbumHeader/AlbumHeader'
+import AlbumButtonRow from '../AlbumButtonRow/AlbumButtonRow'
+import AlbumButton from '../AlbumButton/AlbumButton'
+import AlbumDescription from '../AlbumDescription/AlbumDescription'
+import AlbumTrackList from '../AlbumTrackList/AlbumTrackList'
+import AllMusicLogo from '../AllMusicLogo/AllMusicLogo'
+import EditForm from '../EditForm/EditForm'
 
 class QueueView extends React.Component {
     state = {
@@ -46,7 +48,7 @@ class QueueView extends React.Component {
     };
 
     // Remove album from database on button click
-    async handleRemove(album) {
+    async handleDelete(album) {
         await API.removeAlbum(album);
         window.location = "/queue"
     }
@@ -91,41 +93,43 @@ class QueueView extends React.Component {
         return (
             !this.state.edit ?
                 <Album
-                    idAlbum={this.state.album.albumId}
-                    img={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}
+                    albumId={this.state.album.albumId}
+                    thumbnail={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}
                 >
                     <AlbumHeader
                         title={this.state.album.title}
                         artist={this.state.album.artist}
                         year={this.state.album.year} />
-                    <AlbumButtonRow
-                        buttonClass={"edit-btn"}
-                        buttonText={"Add To Library"}
-                        onClick={() => this.handleEdit()}
-                        allMusicID={this.state.album.allMusicID}
-                        description={this.state.album.description} trackList={this.state.album.tracks}
-                    >
-                        <button className={'delete-btn btn-danger'} onClick={() => this.handleRemove(this.state.album)}>Remove Album</button>
+                        
+                    <AlbumButtonRow>
+                        <AlbumButton 
+                            buttonClass={"edit-btn btn-primary"} 
+                            buttonText={"Add To Library"}
+                            onClick={() => this.handleEdit()} />
+                        <AlbumButton
+                            buttonClass={"delete-btn btn-danger"}
+                            buttonText={"Remove Album"}
+                            onClick={() => this.handleDelete(this.state.album)} />
+                        <AllMusicLogo allMusicId={this.state.album.allMusicId} />
                     </AlbumButtonRow>
+
                     <AlbumDescription description={this.state.album.description} />
-                    <AlbumTrackList text={"View Tracklist"} trackList={this.state.album.tracks} />
+                    <AlbumTrackList text={"View Tracklist"} tracks={this.state.album.tracks} />
                 </Album>
                 :
                 <Album
-                    idAlbum={this.state.album.albumId}
-                    img={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}
-                    id={this.state.album.id}>
+                    albumId={this.state.album.albumId}
+                    thumbnail={this.state.album.thumbnail === null ? "placeholder.png" : this.state.album.thumbnail}>
                     <AlbumHeader
                         title={this.state.album.title}
                         artist={this.state.album.artist}
                         year={this.state.album.year} />
                     <EditForm
-                        title={this.state.album.title}
                         review={this.state.review}
                         onChange={this.handleChange}
                         dateListened={this.state.dateListened}
                         handleDate={this.handleDate}
-                        trackList={this.state.album.tracks}
+                        tracks={this.state.album.tracks}
                         onClick={(event) => this.handleTrackSave(event)}
                         rating={this.state.rating}
                         changeRating={(event) => this.changeRating(event)}
