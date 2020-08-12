@@ -13,7 +13,6 @@ function Album(props) {
                 <div className="row">
                     <AlbumImage img={props.img} id={props.id} />
                     <div className="col-md-8 col-sm-12">
-                        <AlbumHeader title={props.title} artist={props.artist} year={props.year} />
                         {props.children}
                     </div>
                 </div>

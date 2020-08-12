@@ -2,7 +2,7 @@ import React from "react";
 
 // Renders a list item with song title
 
-function ListItem(props) {
+function AlbumTrack(props) {
 
     return(
         <li data={props.songTitle} onClick={props.onClick}>
@@ -12,4 +12,4 @@ function ListItem(props) {
     )
 }
 
-export default ListItem;
+export default AlbumTrack;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from '../utils/API';
 import './Queue.css'
-import AlbumSquare from './AlbumSquare'
+import GridSquare from './GridSquare'
 
 
 class Library extends Component {
@@ -31,7 +31,7 @@ class Library extends Component {
                 {this.state.albums.length === 0  ? <p>...is empty.</p> : 
                 <div className="queue-row row">
                     {this.state.albums.map(album => (
-                        <AlbumSquare link={"/view"} thumbnail={album.thumbnail === null ? "placeholder.png" : album.thumbnail} album={album} id={album.albumId} />
+                        <GridSquare link={"/library/view"} thumbnail={album.thumbnail === null ? "placeholder.png" : album.thumbnail} album={album} id={album.albumId} />
                     ))}
                 </div>
                 }

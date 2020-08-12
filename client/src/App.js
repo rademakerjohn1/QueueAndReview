@@ -4,9 +4,9 @@ import './App.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import Queue from './components/Queue';
-import Edit from './components/Edit';
+import QueueAlbum from './components/QueueAlbum';
 import Library from './components/Library';
-import View from './components/View';
+import LibraryAlbum from './components/LibraryAlbum';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={Search} />
         <Route exact path="/queue" component={Queue} />
-        <Route exact path="/edit" component={Edit} />
+        <Route exact path="/queue/edit" component={QueueAlbum} />
         <Route exact path="/library" component={Library} />
-        <Route exact path="/view" component={View} />
+        <Route exact path="/library/view" component={LibraryAlbum} />
       </Switch>
     </Router>
     </div>

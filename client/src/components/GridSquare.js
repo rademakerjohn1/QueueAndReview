@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './AlbumSquare.css'
+import './GridSquare.css'
 
 // Renders a square with album artwork
 // Cick will link to "/edit" or "/view" window locations, passing along album info from state
 
-function AlbumSquare(props) {
+function GridSquare(props) {
 
     return (
         <div className="queue-card card" alt="" key={props.albumId} id={props.albumId}>
@@ -16,4 +16,4 @@ function AlbumSquare(props) {
     )
 }
 
-export default AlbumSquare;
+export default GridSquare;

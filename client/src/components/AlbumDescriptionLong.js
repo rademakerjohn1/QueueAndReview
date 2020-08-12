@@ -4,7 +4,7 @@ import React from 'react'
 // If !this.state.open, render first 250 characters of description
 // Else, render full description
 
-class DescriptionLong extends React.Component {
+class AlbumDescriptionLong extends React.Component {
 
     constructor(props) {
         super(props);
@@ -31,4 +31,4 @@ class DescriptionLong extends React.Component {
     }
 }
 
-export default DescriptionLong;
+export default AlbumDescriptionLong;

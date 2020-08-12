@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import API from '../utils/API';
-import AlbumView from './AlbumView';
 import './Search.css'
+import Album from './Album'
+import AlbumHeader from './AlbumHeader'
+import AlbumButtonRow from './AlbumButtonRow'
+import AlbumDescription from './AlbumDescription'
+import AlbumTrackList from './AlbumTrackList'
+
 
 class Search extends Component {
 
@@ -78,20 +83,22 @@ class Search extends Component {
                 </form>
                 <div className="row" id="search-container">
                     {this.state.results.map(item => (
-                        <AlbumView
+                        <Album
                             key={item.idAlbum}
                             img={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}
-                            title={item.strAlbum}
-                            artist={item.strArtist}
-                            year={item.intYearReleased}
-                            buttonClass={"save-btn"}
-                            buttonAction={"Add To Queue"}
-                            onClick={() => this.handleSave(item)}
-                            description={item.strDescriptionEN}
-                            idAlbum={item.idAlbum}
-                            allMusicID={item.strAllMusicID}
-                            trackList={item.tracks}
-                        />
+                            idAlbum={item.idAlbum}>
+                            <AlbumHeader 
+                                title={item.strAlbum}
+                                artist={item.strArtist}
+                                year={item.intYearReleased} />
+                            <AlbumButtonRow 
+                                buttonClass={"save-btn"}
+                                buttonText={"Add To Queue"}
+                                allMusicID={item.strAllMusicID}
+                                onClick={() => this.handleSave(item)} />
+                            <AlbumDescription description={item.strDescriptionEN} />
+                            <AlbumTrackList text={"View Tracklist"} trackList={item.tracks} />
+                        </Album>
                     ))}
                 </div>
             </div>
