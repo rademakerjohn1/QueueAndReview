@@ -1,4 +1,5 @@
 module.exports = {
-    Album: require("./album")
+    Album: require("./album"),
+    User: require("./user")
   };
   

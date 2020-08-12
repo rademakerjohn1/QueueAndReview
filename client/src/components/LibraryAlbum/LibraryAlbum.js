@@ -21,6 +21,7 @@ class LibraryAlbum extends React.Component {
         if (!this.props.location.state) {
             return
         } else {
+            this.setState({rating: this.props.location.state.album.rating})
             let formatted = new Date(this.props.location.state.album.dateListened)
             let string = formatted.toLocaleDateString()
             this.props.location.state.album.dateListened = string;
@@ -109,7 +110,7 @@ class LibraryAlbum extends React.Component {
                 <EditForm
                     dateListened={this.state.dateListened}
                     review={this.state.review}
-                    rating={this.state.album.rating}
+                    rating={this.state.rating}
                     tracks={this.state.album.tracks}
                     onClick={(event) => this.handleTrackSave(event)}
                     originalReview={this.state.album.review}

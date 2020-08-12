@@ -8,7 +8,7 @@ function Navigation() {
   return (
       <Nav>
         <NavItem>
-            <NavLink href="/">Search</NavLink> 
+            <NavLink href="/search">Search</NavLink> 
         </NavItem>
         <NavItem>
             <NavLink href="/queue">Queue</NavLink>
