@@ -11,7 +11,6 @@ class QueueView extends React.Component {
     state = {
         album: [],
         edit: false,
-        open: false,
         dateListened: new Date(),
         selectedTracks: [],
         review: '',
