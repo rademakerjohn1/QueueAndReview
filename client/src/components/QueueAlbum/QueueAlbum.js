@@ -100,7 +100,8 @@ class QueueView extends React.Component {
                         title={this.state.album.title}
                         artist={this.state.album.artist}
                         year={this.state.album.year} />
-                        
+                    <AlbumDescription description={this.state.album.description} />
+                    <AlbumTrackList text={"View Tracklist"} tracks={this.state.album.tracks} />
                     <AlbumButtonRow>
                         <AlbumButton 
                             buttonClass={"edit-btn btn-primary"} 
@@ -112,9 +113,6 @@ class QueueView extends React.Component {
                             onClick={() => this.handleDelete(this.state.album)} />
                         <AllMusicLogo allMusicId={this.state.album.allMusicId} />
                     </AlbumButtonRow>
-
-                    <AlbumDescription description={this.state.album.description} />
-                    <AlbumTrackList text={"View Tracklist"} tracks={this.state.album.tracks} />
                 </Album>
                 :
                 <Album
@@ -134,6 +132,7 @@ class QueueView extends React.Component {
                         rating={this.state.rating}
                         changeRating={(event) => this.changeRating(event)}
                         submitForm={(event) => this.submitForm(event)}
+                        handleEdit={() => this.handleEdit()}
                     />
                 </Album>
         )

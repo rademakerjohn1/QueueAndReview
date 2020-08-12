@@ -3,6 +3,8 @@ import './EditForm.css'
 import AlbumTrackList from '../AlbumTrackList/AlbumTrackList'
 import Stars from '../Stars/Stars'
 import DateSelector from '../DateSelector/DateSelector'
+import AlbumButtonRow from '../AlbumButtonRow/AlbumButtonRow'
+import AlbumButton from '../AlbumButton/AlbumButton'
 
 
 // Render form for user feedback
@@ -23,8 +25,17 @@ function EditForm(props) {
             <label>Rating out of 5:
             <Stars rating={props.rating} changeRating={props.changeRating} />
             </label>
+            <AlbumButtonRow>
+                <AlbumButton
+                    buttonClass={"save-btn btn-success"}
+                    buttonText={"Submit"}
+                    onClick={props.submitForm} />
+                <AlbumButton
+                    buttonClass={"back-btn btn-danger"}
+                    buttonText={"Cancel"}
+                    onClick={props.handleEdit} />
+            </AlbumButtonRow>
 
-            <button onClick={props.submitForm} className="btn-success">Submit</button>
         </form>
     )
 

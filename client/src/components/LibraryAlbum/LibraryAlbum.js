@@ -11,10 +11,10 @@ class LibraryAlbum extends React.Component {
     state = {
         album: [],
         edit: false,
+        dateListened: new Date(),
         review: '',
-        rating: 0,
         selectedTracks: [],
-        dateListened: new Date()
+        rating: 0
     }
 
     componentDidMount() {
@@ -118,6 +118,7 @@ class LibraryAlbum extends React.Component {
                     changeRating={(event) => this.changeRating(event)} 
                     remove={() => this.handleRemove(this.state.album)}
                     submitForm={(event) => this.submitForm(event)} 
+                    handleEdit={() => this.handleEdit()}
                 />
             </Album>
         )
