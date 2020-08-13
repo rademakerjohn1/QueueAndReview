@@ -74,7 +74,6 @@ class Search extends Component {
     // Renders search form
     // Maps each result in this.state.results to an AlbumView component 
     render() {
-        console.log('state ', this.state)
         return (
             <div id="search-wrapper">
                 <form className="form-inline" id="search-form">
@@ -86,6 +85,7 @@ class Search extends Component {
                 <div className="row" id="search-container">
                     {this.state.results.map(item => (
                         <Album
+                            key={item.idAlbum}
                             albumId={item.idAlbum}
                             thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}>
                             <AlbumHeader 

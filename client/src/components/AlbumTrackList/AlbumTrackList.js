@@ -20,7 +20,7 @@ class AlbumTrackList extends Component {
                 {this.state.open && 
                     <ol>
                         {this.props.tracks.map(track => 
-                            <AlbumTrack onClick={this.props.onClick} songTitle={track} /> )}
+                            <AlbumTrack key={track} onClick={this.props.onClick} songTitle={track} /> )}
                     </ol>
                 }
             </div>

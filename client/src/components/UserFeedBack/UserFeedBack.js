@@ -22,7 +22,7 @@ function UserFeedBack(props) {
                 <h4>Your Selected Tracks:</h4>
                 {!props.tracks ? null :
                     <ul>
-                        {props.tracks.map(track => <li>{track}</li>)}
+                        {props.tracks.map(track => <li key={track}>{track}</li>)}
                     </ul>
                 }
                 <AlbumButtonRow>
