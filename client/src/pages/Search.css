@@ -1,6 +1,19 @@
-#search-form .form-group {
+#search-wrapper {
+    margin-top: 50px;
+}
+
+#search-form p {
+    text-align: center;
+}
+
+#error {
     margin: auto;
     text-align: center;
+}
+
+.form-group {
+    margin-top:  15px;
+    justify-content: center
 }
 
 #search-form {

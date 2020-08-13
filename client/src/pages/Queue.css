@@ -1,6 +1,11 @@
+#queue-wrapper {
+    margin-top: 50px
+}
+
 .page-header {
     text-align: center;
     margin: auto;
+    margin-bottom: 15px;
 }
 
 #queue-wrapper .page-header + p {
