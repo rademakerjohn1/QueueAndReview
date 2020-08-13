@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from 'axios';
 import API from '../utils/API';
 import './Search.css'
 import Album from '../components/Album/Album'
@@ -17,11 +16,6 @@ class Search extends Component {
         q: '',
         results: []
     };
-
-    componentDidMount() {
-        axios.get("/user/checkAuthentication")
-        .then(res => this.setState({loggedIn: res.data}))
-    }
 
     handleChange = (event) => {
         const { name, value } = event.target;

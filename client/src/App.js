@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 import Header from './components/Header/Header';
 import Login from './pages/Login'
+import Logout from './components/Logout/Logout'
 import Register from './pages/Register'
 import Search from './pages/Search';
 import Queue from './pages/Queue';
@@ -26,6 +27,13 @@ class App extends Component {
       .then(res => this.setState({ loggedIn: res.data }))
   }
 
+  logout(event) {
+    event.preventDefault()
+    axios.get("/user/logout")
+      .then(res => this.setState({ loggedIn: res.data }))
+      .then(window.location = "/login")
+  }
+
   render() {
     return (
       !this.state.loggedIn ?
@@ -45,6 +53,7 @@ class App extends Component {
           </Router>
         </div >
       : <div id="wrapper">
+      <Logout onClick={(event) => this.logout(event)} />
       <Header />
       <Router>
         <Switch>

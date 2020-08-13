@@ -35,8 +35,10 @@ module.exports = {
   // Create album document
   create: function(req, res) {
     db.Album.create(req.body)
-      .then(dbAlbum => res.json(dbAlbum))
-      .catch(err => res.status(422).json(err));
+      .then(dbAlbum => { 
+        db.User.findOneAndUpdate({_id: req.user._id}, { $push: { albums: dbAlbum._id} }, { new: true})
+        .then(dbAlbum => res.json(dbAlbum))})
+      // .catch(err => res.status(422).json(err));
   },
 
   // Update album with matching id

@@ -111,7 +111,7 @@ class QueueView extends React.Component {
                             buttonClass={"delete-btn btn-danger"}
                             buttonText={"Remove Album"}
                             onClick={() => this.handleDelete(this.state.album)} />
-                        <AllMusicLogo allMusicId={this.state.album.allMusicId} />
+                        <AllMusicLogo allMusicID={this.state.album.allMusicID} />
                     </AlbumButtonRow>
                 </Album>
                 :

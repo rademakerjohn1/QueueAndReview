@@ -17,9 +17,14 @@ module.exports = {
 
     loginUser: function(req, res, next) {
         passport.authenticate("local", {
-            successRedirect: '/',
+            successRedirect: '/library',
             failureRedirect: '/login'
         })(req, res, next)
+    },
+
+    logoutUser: function(req, res) {
+        req.logout()
+        res.redirect('/')
     }
 
 
