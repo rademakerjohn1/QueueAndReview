@@ -13,8 +13,8 @@ function Login() {
                 <label htmlFor="password">Password</label>
                 <input type="password" className="form-control" id="password" name="password" placeholder="Password" />
             </div>
+            <button type="submit" className="btn btn-primary">Submit</button><br />
             <Link to="/register">Don't have an account? Register.</Link>
-            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }

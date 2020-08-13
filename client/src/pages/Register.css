@@ -1,4 +1,8 @@
 #register {
-    width: 45%;
+    width: 25%;
     margin: auto;
+}
+
+#register button {
+    margin: 15px auto;
 }

@@ -1,4 +1,9 @@
 #login {
-    width: 45%;
+    width: 25%;
     margin: auto;
 }
+
+#login button {
+    margin: 15px auto;
+}
+

@@ -21,8 +21,8 @@ function Register() {
                 <label htmlFor="password2">Confirm Password</label>
                 <input type="password" className="form-control" id="password2" name="password2" placeholder="Password" />
             </div>
+            <button type="submit" className="btn btn-primary">Submit</button><br />
             <Link to="/login">Already registered? Log in.</Link>
-            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }
