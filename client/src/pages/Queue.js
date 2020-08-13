@@ -27,10 +27,10 @@ class Queue extends Component {
         return (
             <div id="queue-wrapper">
                 <h1 className="page-header">Your Queue</h1>
-                {this.state.albums.length === 0  ? <p>...is empty.</p> : 
+                {this.state.albums.length === 0  ? <p>...is empty. <br /><a href="/search">Search</a> for albums to add!</p> : 
                 <div className="queue-row row">
                     {this.state.albums.map(album => (
-                        <GridSquare link={"/queue/edit"} thumbnail={album.thumbnail === null ? "placeholder.png" : album.thumbnail} album={album} id={album.albumId} />
+                        <GridSquare key={album.albumId}  link={"/queue/edit"} thumbnail={album.thumbnail} album={album} id={album.albumId} />
                     ))}
                 </div>
                 }

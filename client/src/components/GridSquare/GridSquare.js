@@ -10,7 +10,7 @@ function GridSquare(props) {
     return (
         <div className="queue-card card" alt="" key={props.albumId} id={props.albumId}>
             <Link to={{ pathname: `${props.link}`, state: { album: props.album } }}>
-                <img className="card-img" alt="album-art" src={props.thumbnail} />
+                <img className="card-img" alt="album-art" src={props.thumbnail === null ? process.env.PUBLIC_URL + "/placeholder.png" : props.thumbnail} />
             </Link>
         </div>
     )
