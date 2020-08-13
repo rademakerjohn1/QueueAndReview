@@ -17,7 +17,7 @@ function EditForm(props) {
             <DateSelector dateListened={props.dateListened} onChange={props.handleDate} />
             </label>
 
-            <label for="review">What did you think of the album?</label>
+            <label htmlFor="review">What did you think of the album?</label>
             <textarea name="review" value={props.review} onChange={props.onChange} id="review" placeholder={props.originalReview}></textarea>
 
             <AlbumTrackList text={"Pick up to three favorite songs"} onClick={props.onClick} tracks={props.tracks} />
