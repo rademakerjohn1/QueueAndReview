@@ -43,7 +43,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={Register} />
+              <Route exact path="/" component={Login} />
               <Route exact path="/queue" component={Register} />
               <Route exact path="/queue/edit" component={Register} />
               <Route exact path="/library" component={Register} />
@@ -60,7 +60,7 @@ class App extends Component {
           <Route exact path="/register" component={Library} />
           <Route exact path="/login" component={Library} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/" component={Library} />
+          <Route exact path="/" component={Queue} />
           <Route exact path="/queue" component={Queue} />
           <Route exact path="/queue/edit" component={QueueAlbum} />
           <Route exact path="/library" component={Library} />
