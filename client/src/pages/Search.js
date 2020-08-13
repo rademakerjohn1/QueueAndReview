@@ -14,7 +14,8 @@ class Search extends Component {
 
     state = {
         q: '',
-        results: []
+        results: [],
+        error: ""
     };
 
     handleChange = (event) => {
@@ -26,6 +27,7 @@ class Search extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({error: ""})
         this.getAlbums();
     }
 
@@ -35,6 +37,10 @@ class Search extends Component {
     async getAlbums() {
         this.setState({results: []})
         const albums = await API.getAlbums(this.state.q.toLowerCase().split(" ").join("+"));
+        if (!albums.data.album) { 
+            this.setState({error: "No results found."}) 
+            return;
+        }
         const filteredAlbums = albums.data.album.filter(album => album.strReleaseFormat === "Album" || album.strReleaseFormat === "Mixtape/Street")
         await filteredAlbums.forEach(album => {
              this.getTracks(album)
@@ -76,33 +82,36 @@ class Search extends Component {
     render() {
         return (
             <div id="search-wrapper">
-                <form className="form-inline" id="search-form">
-                    <div className="form-group">
+                <form className="form" id="search-form">
+                    <p>Enter an artist name to search for albums</p>
+                    <div className="form-group form-inline">
                         <input type="text" className="form-control" name="q" aria-describedby="text" onChange={this.handleChange} />
                         <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                     </div>
                 </form>
                 <div className="row" id="search-container">
-                    {this.state.results.map(item => (
-                        <Album
-                            key={item.idAlbum}
-                            albumId={item.idAlbum}
-                            thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}>
-                            <AlbumHeader 
-                                title={item.strAlbum}
-                                artist={item.strArtist}
-                                year={item.intYearReleased} />
-                            <AlbumButtonRow>
-                                <AlbumButton
-                                    buttonClass={"btn-primary save-btn"}
-                                    buttonText={"Add To Queue"}
-                                    onClick={() => this.handleSave(item)} />
-                                <AllMusicLogo allMusicID={item.strAllMusicID} />
-                            </AlbumButtonRow>
-                            <AlbumDescription description={item.strDescriptionEN} />
-                            <AlbumTrackList text={"View Tracklist"} tracks={item.tracks} />
-                        </Album>
-                    ))}
+                    {this.state.error === "No results found." ? <p id="error">{this.state.error}</p> :
+                        this.state.results.map(item => (
+                            <Album
+                                key={item.idAlbum}
+                                albumId={item.idAlbum}
+                                thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}>
+                                <AlbumHeader 
+                                    title={item.strAlbum}
+                                    artist={item.strArtist}
+                                    year={item.intYearReleased} />
+                                <AlbumButtonRow>
+                                    <AlbumButton
+                                        buttonClass={"btn-primary save-btn"}
+                                        buttonText={"Add To Queue"}
+                                        onClick={() => this.handleSave(item)} />
+                                    <AllMusicLogo allMusicID={item.strAllMusicID} />
+                                </AlbumButtonRow>
+                                <AlbumDescription description={item.strDescriptionEN} />
+                                <AlbumTrackList text={"View Tracklist"} tracks={item.tracks} />
+                            </Album>
+                        ))
+                }
                 </div>
             </div>
         )
