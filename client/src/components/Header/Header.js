@@ -1,9 +1,8 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
-import Navigation from '../Nav/Nav'
 import './Header.css';
 
-// Render jumbotron header with Navigation
+// Render jumbotron header
 
 function Header() {
   return (
@@ -11,7 +10,6 @@ function Header() {
       <Jumbotron>
         <h1 className="display-3">Queue and Review</h1>
         <p className="lead">Your personal album tracking application.</p>
-        <Navigation />
       </Jumbotron>
     </div>
   );
