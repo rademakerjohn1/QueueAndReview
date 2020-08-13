@@ -18,7 +18,7 @@ class Library extends Component {
     // Get albums from database where "listened" is true, set results to this.state.albums
     async getListenedAlbums() {
         const albums = await API.getListenedAlbums();
-        this.setState({albums: albums.data})
+        this.setState({albums: albums.data[0].albums})
     };
 
     // Render "empty library" message if no listened albums
@@ -31,7 +31,7 @@ class Library extends Component {
                 {this.state.albums.length === 0  ? <p>...is empty.</p> : 
                 <div className="queue-row row">
                     {this.state.albums.map(album => (
-                        <GridSquare link={"/library/view"} thumbnail={album.thumbnail === null ? "placeholder.png" : album.thumbnail} album={album} id={album.albumId} />
+                        <GridSquare key={album.albumId} link={"/library/view"} thumbnail={album.thumbnail === null ? "placeholder.png" : album.thumbnail} album={album} id={album.albumId} />
                     ))}
                 </div>
                 }
