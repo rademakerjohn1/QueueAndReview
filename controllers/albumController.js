@@ -2,20 +2,22 @@ const db = require("../models");
 
 module.exports = {
 
-  // Return unlistened albums in descending order by create time
+  // Returns unlistened albums in descending order by create time
   findUnlistened: function(req, res) {
-    db.Album.find({ listened: false})
-    .sort({createdAt: 'desc'})
-    .then(dbAlbum => res.send(dbAlbum))
-    .catch(err => res.status(422).json(err));
+    db.User.find({_id: req.user._id})
+      .populate({path: 'albums', match: {listened: false}, options: {sort: {createdAt: "desc"}}})
+        .select("albums")
+          .then(dbAlbum => res.send(dbAlbum))
+          .catch(err => res.status(422).json(err));
   },
 
   // Return listened albums in descending order by create time
   findListened: function(req, res) {
-    db.Album.find({ listened: true})
-    .sort({updatedAt: 'desc'})
-    .then(dbAlbum => res.send(dbAlbum))
-    .catch(err => res.status(422).json(err));
+    db.User.find({_id: req.user._id})
+      .populate({path: 'albums', match: {listened: true}, options: {sort: {updatedAt: "desc"}}})
+        .select("albums")
+          .then(dbAlbum => res.send(dbAlbum))
+          .catch(err => res.status(422).json(err));
   },
 
   // Return all albums in descending order by create time
@@ -38,7 +40,7 @@ module.exports = {
       .then(dbAlbum => { 
         db.User.findOneAndUpdate({_id: req.user._id}, { $push: { albums: dbAlbum._id} }, { new: true})
         .then(dbAlbum => res.json(dbAlbum))})
-      // .catch(err => res.status(422).json(err));
+        .catch(err => res.status(422).json(err));
   },
 
   // Update album with matching id
