@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
-import Header from './components/Header/Header';
 import Login from './pages/Login'
+import Header from './components/Header/Header';
+import Nav from './components/Nav/Nav'
 import Logout from './components/Logout/Logout'
 import Register from './pages/Register'
 import Search from './pages/Search';
@@ -54,6 +55,7 @@ class App extends Component {
         </div >
       : <div id="wrapper">
       <Logout onClick={(event) => this.logout(event)} />
+      <Nav />
       <Header />
       <Router>
         <Switch>
