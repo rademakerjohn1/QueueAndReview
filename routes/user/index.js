@@ -13,7 +13,6 @@ router.get("/logout", (req,res) => {
 
 })
 router.get("/checkAuthentication", (req, res) => {
-    console.log(req.user)
     if (!req.user) {
         res.send(false)
     } else (res.send(true))

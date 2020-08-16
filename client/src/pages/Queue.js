@@ -23,7 +23,6 @@ class Queue extends Component {
     // Render "empty queue" message if no unlistened albums
     // Else, map AlbumSquares of each listened album that links to "/edit"
     render() {
-        console.log('state ', this.state)
         return (
             <div id="queue-wrapper">
                 <h1 className="page-header">Your Queue</h1>

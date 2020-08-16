@@ -27,7 +27,6 @@ export default {
   },
 
   updateAlbum: function (album) {
-    console.log(album)
     return axios.put(`/api/albums/${album._id}`, album);
   },
 

@@ -24,7 +24,6 @@ class Library extends Component {
     // Render "empty library" message if no listened albums
     // Else map AlbumSquares of each listened album that links to "/view"
     render() {
-        console.log('state ', this.state)
         return (
             <div id="queue-wrapper">
                 <h1 className="page-header">Your Library</h1>
