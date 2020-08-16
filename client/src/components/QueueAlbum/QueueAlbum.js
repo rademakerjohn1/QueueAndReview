@@ -79,7 +79,6 @@ class QueueView extends React.Component {
             album.selectedTracks = this.state.selectedTracks;
             album.review = this.state.review;
             album.rating = this.state.rating
-            console.log(album)
             return { album };
         })
         await API.updateAlbum(this.state.album)
