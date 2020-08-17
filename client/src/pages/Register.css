@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+#register label {
+    font-size: smaller
+}
+
 #register button {
     margin: 15px auto;
 }

@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+#login label {
+    font-size: smaller
+}
+
 #login button {
     margin: 15px auto;
 }

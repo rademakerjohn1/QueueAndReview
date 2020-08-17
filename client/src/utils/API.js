@@ -37,4 +37,13 @@ export default {
   removeAlbum: function (album) {
     return axios.delete(`/api/albums/${album._id}`, album);
   },
+
+  registerUser: function(user) {
+    return axios.post("/user/register", user)
+  },
+
+  loginUser: function(user) {
+    return axios.post("/user/login", user)
+  }
+  
 };
