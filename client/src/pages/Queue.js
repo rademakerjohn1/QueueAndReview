@@ -29,7 +29,7 @@ class Queue extends Component {
                 {this.state.albums.length === 0  ? <p>...is empty. <br /><a href="/search">Search</a> for albums to add!</p> : 
                 <div className="queue-row row">
                     {this.state.albums.map(album => (
-                        <GridSquare key={album.albumId}  link={"/queue/edit"} thumbnail={album.thumbnail} album={album} id={album.albumId} />
+                        <GridSquare key={album.albumId} link={"/queue/edit"} title={album.title} artist={album.artist} thumbnail={album.thumbnail} album={album} id={album.albumId} />
                     ))}
                 </div>
                 }

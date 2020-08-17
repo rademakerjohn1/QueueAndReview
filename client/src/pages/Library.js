@@ -30,7 +30,7 @@ class Library extends Component {
                 {this.state.albums.length === 0  ? <p>...is empty. <br /> Check your <a href="/queue">queue</a> or <a href="/search">search</a> for albums!</p> : 
                 <div className="queue-row row">
                     {this.state.albums.map(album => (
-                        <GridSquare key={album.albumId} link={"/library/view"} thumbnail={album.thumbnail} album={album} id={album.albumId} />
+                        <GridSquare key={album.albumId} rating={album.rating} title={album.title} artist={album.artist} link={"/library/view"} thumbnail={album.thumbnail} album={album} id={album.albumId} />
                     ))}
                 </div>
                 }
