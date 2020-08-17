@@ -2,5 +2,18 @@
     margin: auto;
     text-align: center;
     background-color: transparent;
-    padding-bottom: 0px;
+    padding-bottom: 50px;
+    color: white;
+    border-radius: 0px;
+
+}
+
+.user-header {
+    background-image: url("/manuel-sardo-HwFv8EZYC_o-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron h1 {
+    font-weight: bold
 }

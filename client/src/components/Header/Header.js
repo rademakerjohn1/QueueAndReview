@@ -4,14 +4,13 @@ import './Header.css';
 
 // Render jumbotron header
 
-function Header() {
+function Header(props) {
   return (
-    <div>
-      <Jumbotron>
+      <Jumbotron className={props.loggedIn && "user-header"}>
         <h1 className="display-3">Queue and Review</h1>
         <p className="lead">Your personal album tracking application.</p>
+        {props.children}
       </Jumbotron>
-    </div>
   );
 };
 

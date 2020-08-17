@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       !this.state.loggedIn ?
-        <div id = "wrapper">
+        <div id="guest-wrapper">
           <Header />
           <Router>
             <Switch>
@@ -55,8 +55,10 @@ class App extends Component {
         </div >
       : <div id="wrapper">
       <Logout onClick={(event) => this.logout(event)} />
-      <Nav />
-      <Header />
+
+      <Header loggedIn={this.state.loggedIn}>
+        <Nav />
+      </Header>
       <Router>
         <Switch>
           <Route exact path="/register" component={Library} />
