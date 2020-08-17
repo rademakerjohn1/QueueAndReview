@@ -20,7 +20,7 @@ class GridSquare extends Component {
 
     render() {
         return (
-            <div className="queue-card card tooltip" alt="" key={this.props.albumId} id={this.props.albumId}>
+            <div className="grid-card card tooltip" alt="" key={this.props.albumId} id={this.props.albumId}>
                 {this.state.hover && <Tooltip title={this.props.title} artist={this.props.artist} rating={this.props.rating} />}
                 <Link to={{ pathname: `${this.props.link}`, state: { album: this.props.album } }}>
                     <img onMouseLeave={this.toggleHover} onMouseOver={this.toggleHover} className="card-img" alt="album-art" src={this.props.thumbnail === null ? process.env.PUBLIC_URL + "/placeholder.png" : this.props.thumbnail} />

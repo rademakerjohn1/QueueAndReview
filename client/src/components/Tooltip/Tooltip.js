@@ -4,7 +4,7 @@ import Stars from '../Stars/Stars'
 
 function Tooltip(props) {
     return (
-        <div class="tooltip-text">
+        <div className="tooltip-text">
             <p>{props.title}</p>
             <p>{props.artist}</p>
             {props.rating !== undefined && <Stars rating={props.rating} dimension="12px" />}

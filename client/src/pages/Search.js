@@ -95,7 +95,8 @@ class Search extends Component {
                             <Album
                                 key={item.idAlbum}
                                 albumId={item.idAlbum}
-                                thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}>
+                                thumbnail={!item.strAlbumThumb ? "placeholder.png" : item.strAlbumThumb}
+                                className="search-result">
                                 <AlbumHeader 
                                     title={item.strAlbum}
                                     artist={item.strArtist}

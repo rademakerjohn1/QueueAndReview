@@ -92,6 +92,7 @@ class QueueView extends React.Component {
         return (
             !this.state.edit ?
                 <Album
+                    className="queue-album"
                     albumId={this.state.album.albumId}
                     thumbnail={this.state.album.thumbnail}
                 >
@@ -115,6 +116,7 @@ class QueueView extends React.Component {
                 </Album>
                 :
                 <Album
+                    className="queue-album"
                     albumId={this.state.album.albumId}
                     thumbnail={this.state.album.thumbnail}>
                     <AlbumHeader

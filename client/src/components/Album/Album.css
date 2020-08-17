@@ -1,11 +1,26 @@
-.search-result-card {
+.album-card {
     background-color: transparent;
     width: 90vw;
     padding: 25px;
     margin: auto;
     margin-bottom: 50px;
     border: none;
+}
+
+.queue-album, .library-album {
+    margin-top: 25px;
+}
+
+.album-row {
+    justify-content: center;
+}
+
+.search-result {
     border-bottom: 1px dotted grey;
+}
+
+.search-result:last-child {
+    border-bottom: none;
 }
 
 .card h1 {
@@ -15,6 +30,7 @@
 .description-text {
     font-style: italic;
     margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .description-toggle {
@@ -43,10 +59,12 @@
 .save-btn, .edit-btn, .delete-btn, .back-btn {
     margin-right: 10px;
     padding: 0px 15px;
-    border-radius: 5px;
+    border: none;
 }
 
-
+.tracklist-container {
+    margin-top: 20px;
+}
 
 ol {
     margin-top: 15px;

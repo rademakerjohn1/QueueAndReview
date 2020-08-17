@@ -6,7 +6,7 @@ import AlbumDescriptionLong from '../AlbumDescriptionLong/AlbumDescriptionLong'
 
 function AlbumDescription(props) {
     return (
-        props.description === undefined ? <p>No description available</p> :
+        props.description === undefined ? <p className="description-text">No description available</p> :
             props.description.length > 250 ? 
                 <AlbumDescriptionLong description={props.description} /> 
                 : <p className="description-text">{props.description}</p>
