@@ -47,12 +47,13 @@ class Login extends Component {
     render() {
         return (
             <form id="login">
+                <h3>Login</h3>
                 <div className="form-group">
-                    <label htmlFor="email">Email address</label>
+                    <label htmlFor="email">Email address:</label>
                     <input onChange={this.handleChange} type="email" className="form-control" id="email" name="email" placeholder="Enter email" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <input onChange={this.handleChange} type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button><br />
