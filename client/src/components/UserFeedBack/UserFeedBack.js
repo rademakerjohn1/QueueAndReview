@@ -17,7 +17,7 @@ function UserFeedBack(props) {
                 <p>"{props.review}"</p>
 
                 <h4>Your Rating:</h4>
-                <Stars isSelectable="false" rating={props.rating} />
+                <Stars isSelectable="false" rating={props.rating} dimension="25px" />
 
                 <h4>Your Selected Tracks:</h4>
                 {!props.tracks ? null :

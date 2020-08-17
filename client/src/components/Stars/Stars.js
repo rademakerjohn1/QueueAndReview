@@ -10,7 +10,7 @@ function Stars(props) {
       starRatedColor="red"
       starHozverColor="red"
       changeRating={props.changeRating}
-      starDimension={"25px"}
+      starDimension={props.dimension}
       starSpacing={"2px"}
       numberOfStars={5}
       name='rating'

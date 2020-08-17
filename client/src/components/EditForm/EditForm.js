@@ -23,7 +23,7 @@ function EditForm(props) {
             <AlbumTrackList text={"Pick up to three favorite songs"} onClick={props.onClick} tracks={props.tracks} />
 
             <label>Rating out of 5:
-            <Stars rating={props.rating} changeRating={props.changeRating} />
+            <Stars rating={props.rating} changeRating={props.changeRating} dimension="25px" />
             </label>
             <AlbumButtonRow>
                 <AlbumButton
