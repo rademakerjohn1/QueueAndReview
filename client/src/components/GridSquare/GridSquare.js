@@ -31,7 +31,7 @@ class GridSquare extends Component {
                         onMouseLeave={this.toggleHover} 
                         onMouseOver={this.toggleHover} 
                         className="card-img" alt="album-art" 
-                        src={thumbnail === null ? process.env.PUBLIC_URL + "/placeholder.png" : thumbnail} 
+                        src={thumbnail === null || thumbnail === "" ? process.env.PUBLIC_URL + "/placeholder.png" : thumbnail} 
                     />
                 </Link>
             </div>
