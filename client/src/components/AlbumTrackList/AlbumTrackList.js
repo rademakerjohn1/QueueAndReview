@@ -14,10 +14,13 @@ class AlbumTrackList extends Component {
         this.setState({ open: !this.state.open })
     }
     render() {
+        
+        const { open } = this.state
+
         return (
             <div className="tracklist-container">
                 <p onClick={(e) => this.toggleTrackList(e)}>{this.props.text}<i className={`arrow ${!this.state.open ? "down" : "up"}`}></i></p>
-                {this.state.open && 
+                {open && 
                     <ol>
                         {this.props.tracks.map(track => 
                             <AlbumTrack key={track} onClick={this.props.onClick} songTitle={track} /> )}

@@ -3,7 +3,7 @@ import './Error.css'
 
 function Error(props) {
     return (
-        <p class="error-message">{props.error}</p>
+        <p className="error-message">{props.error}</p>
     )
 }
 

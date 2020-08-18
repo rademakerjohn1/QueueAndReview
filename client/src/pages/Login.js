@@ -45,6 +45,9 @@ class Login extends Component {
     }
 
     render() {
+        
+        const { error } = this.state;
+
         return (
             <form id="login">
                 <h3>Login</h3>
@@ -58,7 +61,7 @@ class Login extends Component {
                 </div>
                 <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button><br />
                 <Link to="/register">Don't have an account? Register.</Link>
-                {!this.state.error !== '' && <Error error={this.state.error}/>}
+                {!error !== '' && <Error error={error}/>}
             </form>
         )
     }

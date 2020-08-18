@@ -3,8 +3,8 @@ import API from '../utils/API';
 import './Search.css'
 import Album from '../components/Album/Album'
 import AlbumHeader from '../components/AlbumHeader/AlbumHeader'
-import AlbumButtonRow from '../components/AlbumButtonRow/AlbumButtonRow'
-import AlbumButton from '../components/AlbumButton/AlbumButton'
+import ButtonRow from '../components/ButtonRow/ButtonRow'
+import Button from '../components/Button/Button'
 import AlbumDescription from '../components/AlbumDescription/AlbumDescription'
 import AlbumTrackList from '../components/AlbumTrackList/AlbumTrackList'
 import AllMusicLogo from '../components/AllMusicLogo/AllMusicLogo'
@@ -80,6 +80,9 @@ class Search extends Component {
     // Renders search form
     // Maps each result in this.state.results to an AlbumView component 
     render() {
+
+        const { error, results } = this.state
+
         return (
             <div id="search-wrapper">
                 <form className="form" id="search-form">
@@ -90,8 +93,8 @@ class Search extends Component {
                     </div>
                 </form>
                 <div className="row" id="search-container">
-                    {this.state.error === "No results found." ? <p id="error">{this.state.error}</p> :
-                        this.state.results.map(item => (
+                    { error === "No results found." ? <p id="error">{error}</p> :
+                        results.map(item => (
                             <Album
                                 key={item.idAlbum}
                                 albumId={item.idAlbum}
@@ -101,13 +104,13 @@ class Search extends Component {
                                     title={item.strAlbum}
                                     artist={item.strArtist}
                                     year={item.intYearReleased} />
-                                <AlbumButtonRow>
-                                    <AlbumButton
+                                <ButtonRow>
+                                    <Button
                                         buttonClass={"btn-primary save-btn"}
                                         buttonText={"Add To Queue"}
                                         onClick={() => this.handleSave(item)} />
                                     <AllMusicLogo allMusicID={item.strAllMusicID} />
-                                </AlbumButtonRow>
+                                </ButtonRow>
                                 <AlbumDescription description={item.strDescriptionEN} />
                                 <AlbumTrackList text={"View Tracklist"} tracks={item.tracks} />
                             </Album>

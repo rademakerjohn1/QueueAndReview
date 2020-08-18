@@ -55,31 +55,34 @@ class Register extends Component {
     }
 
     render() {
+
+        const { errors } = this.state;
+
         return (
             <form id="register">
                 <h3>Register</h3>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
                     <input onChange={this.handleChange} type="text" className="form-control" id="name" name="name" placeholder="Enter name" />
-                    {this.state.errors.includes("Name required") && <Error error="Name required" />}
+                    {errors.includes("Name required") && <Error error="Name required" />}
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email address:</label>
                     <input onChange={this.handleChange} type="email" className="form-control" id="email" name="email" placeholder="Enter email" />
-                    {this.state.errors.includes("Email required") && <Error error="Email required" />}
-                    {this.state.errors.includes("An account with this email exists") && <Error error="An account with this email exists" />}
+                    {errors.includes("Email required") && <Error error="Email required" />}
+                    {errors.includes("An account with this email exists") && <Error error="An account with this email exists" />}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input onChange={this.handleChange} type="password" className="form-control" id="password1" name="password" placeholder="Password" />
-                    {this.state.errors.includes("Password must be at least six characters") && <Error error="Password must be at least six characters" />}
-                    {this.state.errors.includes("Password required") && <Error error="Password required" />}
+                    {errors.includes("Password must be at least six characters") && <Error error="Password must be at least six characters" />}
+                    {errors.includes("Password required") && <Error error="Password required" />}
 
                 </div>
                 <div className="form-group">
                     <label htmlFor="password2">Retype Password:</label>
                     <input onChange={this.handleChange} type="password" className="form-control" id="password2" name="password2" placeholder="Password" />
-                    {this.state.errors.includes("Passwords do not match") && <Error error="Passwords do not match" />}
+                    {errors.includes("Passwords do not match") && <Error error="Passwords do not match" />}
                 </div>
                 <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button><br />
                 <Link to="/login">Already registered? Log in.</Link>

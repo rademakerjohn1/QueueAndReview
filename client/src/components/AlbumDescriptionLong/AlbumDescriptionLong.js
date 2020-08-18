@@ -18,14 +18,17 @@ class AlbumDescriptionLong extends React.Component {
         this.setState({open: !this.state.open})
     }
     render() {
+
+        const { open } = this.state
+
         return (
-            !this.state.open ? 
+            !open ? 
                 <p className="description-text">{this.props.description.substring(0,250)}...
                     <span className="description-toggle" onClick={(e) => this.toggleDescription(e)}>More</span>
                 </p> : 
                 <div>
-                <p className="description-text">{this.props.description}</p>
-                <p className="description-toggle" onClick={(e) => this.toggleDescription(e)}>Less</p>
+                    <p className="description-text">{this.props.description}</p>
+                    <p className="description-toggle" onClick={(e) => this.toggleDescription(e)}>Less</p>
                 </div>
         )
     }
