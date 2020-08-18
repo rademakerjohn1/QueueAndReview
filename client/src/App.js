@@ -9,6 +9,7 @@ import Logout from './components/Logout/Logout'
 import Register from './pages/Register'
 import Search from './pages/Search';
 import Queue from './pages/Queue';
+import EditAlbum from './components/EditAlbum/EditAlbum' 
 import QueueAlbum from './components/QueueAlbum/QueueAlbum';
 import Library from './pages/Library';
 import LibraryAlbum from './components/LibraryAlbum/LibraryAlbum';
@@ -45,17 +46,12 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/" component={Login} />
-              <Route exact path="/queue" component={Register} />
-              <Route exact path="/queue/edit" component={Register} />
-              <Route exact path="/library" component={Register} />
-              <Route exact path="/library/view" component={Register} />
-              <Route exact path="/search" component={Register} />
+              <Route exact path="*" component={Login} />
             </Switch>
           </Router>
         </div >
       : <div id="wrapper">
       <Logout onClick={(event) => this.logout(event)} />
-
       <Header loggedIn={this.state.loggedIn}>
         <Nav />
       </Header>
@@ -66,9 +62,11 @@ class App extends Component {
           <Route exact path="/search" component={Search} />
           <Route exact path="/" component={Queue} />
           <Route exact path="/queue" component={Queue} />
-          <Route exact path="/queue/edit" component={QueueAlbum} />
+          <Route exact path="/queue/album" component={QueueAlbum} />
+          <Route exact path="/queue/album/edit" component={EditAlbum} />
           <Route exact path="/library" component={Library} />
-          <Route exact path="/library/view" component={LibraryAlbum} />
+          <Route exact path="/library/album" component={LibraryAlbum} />
+          <Route exact path="/library/album/edit" component={EditAlbum} />
         </Switch>
       </Router>
     </div>
