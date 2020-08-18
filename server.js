@@ -23,9 +23,6 @@ app.use(passport.session());
 
 require('./config/passport')(passport)
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-  }
 
 app.use(routes);
 
@@ -41,6 +38,10 @@ mongoose.connect(
 mongoose.set('useFindAndModify', false);
 
 app.use(morgan('tiny'));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 app.listen(PORT, (err) => {
     if (err) throw console.log(err);
