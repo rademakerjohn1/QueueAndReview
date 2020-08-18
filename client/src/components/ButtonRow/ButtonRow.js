@@ -7,7 +7,7 @@ import React from 'react'
 
 // If allMusicID exists, renders AllMusic logo with link to the album's AllMusic page
 
-function AlbumButtonRow(props) {
+function ButtonRow(props) {
 
     return (
         <div className="sub-row row">
@@ -16,4 +16,4 @@ function AlbumButtonRow(props) {
     )
 }
 
-export default AlbumButtonRow;
+export default ButtonRow;
