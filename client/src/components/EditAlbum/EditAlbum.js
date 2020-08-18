@@ -115,7 +115,7 @@ class EditAlbum extends Component {
         return (
             <Album
                 className="queue-album"
-                albumId={album.albumId}
+                _id={album._id}
                 thumbnail={album.thumbnail}
             >
                 <AlbumHeader
@@ -134,7 +134,7 @@ class EditAlbum extends Component {
                     handleCancel={(event) => this.handleCancel(event)}>
                     <ol>
                         {album.tracks && album.tracks.map(track => (
-                            <li>
+                            <li key={track}>
                                 <input
                                     data={track}
                                     key={track}

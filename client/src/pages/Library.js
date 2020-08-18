@@ -36,14 +36,14 @@ class Library extends Component {
                     <div className="queue-row row">
                         {albums.map(album => (
                             <GridSquare
-                                key={album.albumId}
+                                key={album._id}
                                 rating={album.rating}
                                 title={album.title}
                                 artist={album.artist}
                                 link={"/library/album"}
                                 thumbnail={album.thumbnail}
                                 album={album}
-                                id={album.albumId} />
+                                id={album._id} />
                         ))
                         }
                     </div>

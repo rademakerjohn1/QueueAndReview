@@ -9,7 +9,7 @@ function AlbumImage(props) {
                 className="card-img" 
                 alt="album art" 
                 src={props.thumbnail === null || props.thumbnail === "" ? process.env.PUBLIC_URL + "/placeholder.png" : props.thumbnail} 
-                id={props.albumId} />
+                id={props._id} />
         </div>
     )
 }

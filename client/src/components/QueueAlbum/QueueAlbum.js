@@ -40,7 +40,7 @@ class QueueAlbum extends React.Component {
         return (
             <Album
                 className="queue-album"
-                albumId={album.albumId}
+                _id={album._id}
                 thumbnail={album.thumbnail}
             >
                 <AlbumHeader

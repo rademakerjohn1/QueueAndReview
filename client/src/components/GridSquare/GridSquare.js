@@ -21,10 +21,10 @@ class GridSquare extends Component {
     render() {
 
         const { hover } = this.state
-        const { artist, title, link, albumId, rating, album, thumbnail } = this.props
+        const { artist, title, link, rating, album, thumbnail, _id } = this.props
 
         return (
-            <div className="grid-card card tooltip" alt="" key={albumId} id={albumId}>
+            <div className="grid-card card tooltip" alt="" id={_id}>
                 {hover && <Tooltip title={title} artist={artist} rating={rating} />}
                 <Link to={{ pathname: `${link}`, state: { album: album } }}>
                     <img 

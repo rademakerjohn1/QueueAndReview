@@ -32,13 +32,13 @@ class Queue extends Component {
                     <div className="queue-row row">
                         {albums.map(album => (
                             <GridSquare
-                                key={album.albumId}
+                                key={album._id}
                                 link={"/queue/album"}
                                 title={album.title}
                                 artist={album.artist}
                                 thumbnail={album.thumbnail}
                                 album={album}
-                                id={album.albumId}
+                                id={album._id}
                             />
                         ))}
                     </div>

@@ -8,9 +8,9 @@ import AlbumImage from '../AlbumImage/AlbumImage'
 function Album(props) {
 
         return (
-            <div className={`${props.className} album-card`} key={props.albumId}>
+            <div className={`${props.className} album-card`}>
                 <div className="row album-row">
-                    <AlbumImage thumbnail={props.thumbnail} albumId={props.albumId} />
+                    <AlbumImage thumbnail={props.thumbnail} _id={props._id} />
                     <div className="col-md-8 col-sm-12">
                         {props.children}
                     </div>

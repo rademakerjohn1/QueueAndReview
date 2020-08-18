@@ -50,7 +50,7 @@ class LibraryAlbum extends React.Component {
 
         return (
                 <Album
-                    albumId={album.albumId}
+                    _id={album._id}
                     thumbnail={album.thumbnail}
                     className="library-album">
                     <UserFeedBack

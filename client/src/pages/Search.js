@@ -97,7 +97,7 @@ class Search extends Component {
                         results.map(item => (
                             <Album
                                 key={item.idAlbum}
-                                albumId={item.idAlbum}
+                                _id={item.idAlbum}
                                 thumbnail={item.strAlbumThumb}
                                 className="search-result">
                                 <AlbumHeader 
