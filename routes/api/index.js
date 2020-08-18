@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const theAudioDbController = require("../../controllers/theAudioDbController");
+const TheAudioDbController = require("../../controllers/TheAudioDbController");
 const albumController = require("../../controllers/albumController");
 
 // TheAudioDB routes
-router.route("/artist").get(theAudioDbController.findByArtist);
+router.route("/artist").get(TheAudioDbController.findByArtist);
 
-router.route("/tracks").get(theAudioDbController.findTracks);
+router.route("/tracks").get(TheAudioDbController.findTracks);
 
 
 // Database routes
