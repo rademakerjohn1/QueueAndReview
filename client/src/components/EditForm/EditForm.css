@@ -17,3 +17,23 @@ label {
 .btn-success {
     padding: 0px 15px;
 }
+
+#track-selector {
+    list-style: none;
+    counter-reset: olCounter;
+    padding-left: 0px;
+  }
+  
+#track-selector li {
+    counter-increment: olCounter;
+    margin-bottom: 5px;
+  }
+  
+#track-selector  li button::before {
+    content: counter(olCounter) ". ";
+  }
+
+.track-input {
+    display: inline-block;
+    margin-left: 10px;
+}

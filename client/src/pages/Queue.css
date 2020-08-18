@@ -1,11 +1,19 @@
 #queue-wrapper {
-    margin-top: 50px
+    margin-top: 50px;
+    justify-content: space-between;
+
+
 }
 
 .page-header {
-    text-align: center;
-    margin: auto;
-    margin-bottom: 15px;
+    margin: 0px;
+    width: 20%;
+    right: -25px;
+    padding: 10px;
+    position: absolute;
+    color: lightgrey;
+    font-size: 16rem;
+    writing-mode: vertical-rl; 
 }
 
 #queue-wrapper .page-header + p {
@@ -15,8 +23,10 @@
 
 .queue-row {
     flex-wrap: wrap;
-    justify-content: center;
-    width: 90vw;
-    margin: auto;
+    justify-content: flex-start;
+    width: 75%;
+    margin-left: 50px;
     padding: 50px;
+    padding-top: 0px;
+    margin-right: 50px;
 }

@@ -52,14 +52,15 @@
     margin-top: 15px;
 }
 
-.save-btn, .allmusic-logo {
-    height: 30px;
+.allmusic-logo {
+    height: 35px;
 }
 
 .save-btn, .edit-btn, .delete-btn, .back-btn {
     margin-right: 10px;
     padding: 0px 15px;
     border: none;
+    height: 35px;
 }
 
 .tracklist-container {

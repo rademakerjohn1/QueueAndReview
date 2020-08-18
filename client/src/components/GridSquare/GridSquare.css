@@ -6,7 +6,11 @@
     position: relative;
 }
 
+.grid-card .card-img {
+    border-radius: 0px;
+}
 
-.queue-card:hover {
+
+.grid-card:hover {
     opacity: initial;
 }
