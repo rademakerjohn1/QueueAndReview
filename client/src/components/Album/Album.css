@@ -28,6 +28,12 @@
     font-weight: bold;
 }
 
+
+.album-card h2 {
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
 .description-text {
     font-style: italic;
     margin-top: 15px;
