@@ -10,8 +10,8 @@ function Album(props) {
         return (
             <div className={`${props.className} album-card`}>
                 <div className="row album-row">
-                    <AlbumImage thumbnail={props.thumbnail} _id={props._id} />
-                    <div className="col-md-8 col-sm-12">
+                    <AlbumImage children={props.imageChildren} thumbnail={props.thumbnail} _id={props._id} />
+                    <div className="col-sm-8 col-xs-12">
                         {props.children}
                     </div>
                 </div>

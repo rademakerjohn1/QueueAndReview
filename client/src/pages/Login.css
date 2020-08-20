@@ -14,3 +14,9 @@
     margin: 15px auto;
 }
 
+@media screen and (max-width: 425px) {
+    #login {
+        width: 80%;
+    }
+}
+

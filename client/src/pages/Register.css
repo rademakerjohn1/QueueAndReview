@@ -13,3 +13,9 @@
 #register button {
     margin: 15px auto;
 }
+
+@media screen and (max-width: 425px) {
+    #register {
+        width: 80%;
+    }
+}

@@ -24,3 +24,15 @@
     padding: 0px 25px;
     margin-top: 75px;
 }
+
+@media screen and (max-width: 767px) {
+
+    #search-form {
+        width: 75%;
+        margin: auto;
+    }
+
+    #search-form .btn {
+        margin-top: 25px;
+    }
+}

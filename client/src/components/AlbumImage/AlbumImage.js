@@ -4,12 +4,13 @@ import React from 'react';
 
 function AlbumImage(props) {
     return (
-        <div className="col-md-3 col-sm-12">
+        <div className="col-sm-3 col-xs-12">
             <img 
                 className="card-img" 
                 alt="album art" 
                 src={props.thumbnail === null || props.thumbnail === "" ? process.env.PUBLIC_URL + "/placeholder.png" : props.thumbnail} 
                 id={props._id} />
+            {props.children}
         </div>
     )
 }

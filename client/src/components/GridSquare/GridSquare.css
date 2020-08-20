@@ -14,3 +14,9 @@
 .grid-card:hover {
     opacity: initial;
 }
+
+@media screen and (max-width: 767px) {
+    .grid-card {
+        width: 50%
+    }
+}

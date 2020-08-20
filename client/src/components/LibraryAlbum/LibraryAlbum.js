@@ -52,7 +52,18 @@ class LibraryAlbum extends React.Component {
                 <Album
                     _id={album._id}
                     thumbnail={album.thumbnail}
-                    className="library-album">
+                    className="library-album"
+                    imageChildren={
+                        <ButtonRow>
+                    <Link to={{ pathname: "/library/album/edit", state: { album: album }}}>
+                        <Button buttonClass={"edit-btn btn-primary"} buttonText={"Edit Album"} />
+                    </Link>
+                    <Button
+                        buttonClass={"delete-btn btn-danger"}
+                        buttonText={"Remove Album"}
+                        onClick={() => this.handleDelete(album)} />
+                </ButtonRow>
+                    }>
                     <UserFeedBack
                         title={album.title}
                         edit={() => this.handleEdit()}
@@ -64,15 +75,6 @@ class LibraryAlbum extends React.Component {
                         dateListened={album.dateListened}
                         delete={() => this.handleDelete(album)}
                     />
-                    <ButtonRow>
-                    <Link to={{ pathname: "/library/album/edit", state: { album: album }}}>
-                        <Button buttonClass={"edit-btn btn-primary"} buttonText={"Edit Album"} />
-                    </Link>
-                    <Button
-                        buttonClass={"delete-btn btn-danger"}
-                        buttonText={"Remove Album"}
-                        onClick={() => this.handleDelete(album)} />
-                </ButtonRow>
                 </Album>
         )
     }

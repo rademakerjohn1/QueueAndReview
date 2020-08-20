@@ -1,18 +1,16 @@
 #queue-wrapper {
     margin-top: 50px;
+    padding: 25px;
     justify-content: space-between;
-
-
+    position: relative
 }
 
 .page-header {
-    margin: 0px;
-    width: 20%;
-    right: -25px;
-    padding: 10px;
+    right: 20px;
+    font-size: 64px;
+    padding-top: 10px;
     position: absolute;
     color: lightgrey;
-    font-size: 16rem;
     writing-mode: vertical-rl; 
 }
 
@@ -24,9 +22,30 @@
 .queue-row {
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 75%;
+    width: 80%;
     margin-left: 50px;
-    padding: 50px;
+    padding-left: 25px;
     padding-top: 0px;
-    margin-right: 50px;
+}
+
+@media screen and (max-width: 767px) {
+
+    #queue-wrapper {
+        margin-top: 0px;
+    }
+
+    .page-header {
+        writing-mode: initial;
+        position: initial;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .queue-row {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 80%;
+        margin: auto;
+        padding: 0px;
+    }
 }
