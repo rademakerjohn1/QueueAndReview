@@ -4,5 +4,8 @@
 
 .nav a {
     color: white;
-    text-decoration: underline;
+}
+
+.nav .active {
+    border: 1px solid white;
 }
