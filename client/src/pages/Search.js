@@ -106,7 +106,7 @@ class Search extends Component {
                                     year={item.intYearReleased} />
                                 <ButtonRow>
                                     <Button
-                                        buttonClass={"btn-primary save-btn"}
+                                        buttonClass={"btn-primary add-btn"}
                                         buttonText={"Add To Queue"}
                                         onClick={() => this.handleSave(item)} />
                                     <AllMusicLogo allMusicID={item.strAllMusicID} />
