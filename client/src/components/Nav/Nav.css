@@ -6,6 +6,10 @@
     color: white;
 }
 
+.nav .active a {
+    color: black;
+}
+
 .nav .active {
-    border: 1px solid white;
+    background-color: white;
 }
