@@ -1,5 +1,5 @@
 #register {
-    width: 50%;
+    width: 40%;
     margin: auto;
     padding: 20px 50px;
     background-color: white;
@@ -14,7 +14,7 @@
     margin: 15px auto;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     #register {
         width: 80%;
     }
