@@ -49,33 +49,31 @@ class LibraryAlbum extends React.Component {
         const { album } = this.state;
 
         return (
-                <Album
-                    _id={album._id}
-                    thumbnail={album.thumbnail}
-                    className="library-album"
-                    imageChildren={
-                        <ButtonRow>
-                    <Link to={{ pathname: "/library/album/edit", state: { album: album }}}>
-                        <Button buttonClass={"edit-btn btn-primary"} buttonText={"Edit Album"} />
+            <Album
+                _id={album._id}
+                thumbnail={album.thumbnail}
+                className="library-album">
+                <UserFeedBack
+                    title={album.title}
+                    edit={() => this.handleEdit()}
+                    artist={album.artist}
+                    year={album.year}
+                    review={album.review}
+                    rating={album.rating}
+                    tracks={album.selectedTracks}
+                    dateListened={album.dateListened}
+                    delete={() => this.handleDelete(album)}
+                />
+                <ButtonRow>
+                    <Link to={{ pathname: "/library/album/edit", state: { album: album } }}>
+                        <Button buttonClass={"edit-btn btn-primary"} buttonText={"Edit"} />
                     </Link>
                     <Button
                         buttonClass={"delete-btn btn-danger"}
-                        buttonText={"Remove Album"}
+                        buttonText={"Delete"}
                         onClick={() => this.handleDelete(album)} />
                 </ButtonRow>
-                    }>
-                    <UserFeedBack
-                        title={album.title}
-                        edit={() => this.handleEdit()}
-                        artist={album.artist}
-                        year={album.year}
-                        review={album.review}
-                        rating={album.rating}
-                        tracks={album.selectedTracks}
-                        dateListened={album.dateListened}
-                        delete={() => this.handleDelete(album)}
-                    />
-                </Album>
+            </Album>
         )
     }
 }

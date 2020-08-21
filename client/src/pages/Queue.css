@@ -6,9 +6,8 @@
 }
 
 .page-header {
-    right: 20px;
+    right: 5px;
     font-size: 64px;
-    padding-top: 10px;
     position: absolute;
     color: lightgrey;
     writing-mode: vertical-rl; 
@@ -28,23 +27,36 @@
     padding-top: 0px;
 }
 
+@media screen and (min-width: 1024px) {
+    .page-header {
+        font-size: 72px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .page-header {
+        font-size: 128px;
+        right: 15px;
+    }
+}
+
 @media screen and (max-width: 767px) {
 
     #queue-wrapper {
         margin-top: 0px;
     }
-
     .page-header {
         writing-mode: initial;
         position: initial;
         margin: auto;
+        font-size: 32px;
         text-align: center;
         margin-bottom: 25px;
     }
     .queue-row {
         flex-wrap: wrap;
         justify-content: flex-start;
-        width: 80%;
+        width: 100%;
         margin: auto;
         padding: 0px;
     }

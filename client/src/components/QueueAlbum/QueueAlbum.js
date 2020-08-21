@@ -48,14 +48,15 @@ class QueueAlbum extends React.Component {
                     artist={album.artist}
                     year={album.year} />
                 <ButtonRow>
-                    <Link to={{ pathname: "/queue/album/edit", state: { album: album } }}>
-                        <Button buttonClass={"edit-btn btn-primary"} buttonText={"Add To Library"} />
+
+                    <Link className="save-btn-link" to={{ pathname: "/queue/album/edit", state: { album: album } }}>
+                        <Button buttonClass={"save-btn btn-primary"} buttonText={"Save"} />
                     </Link>
                     <Button
                         buttonClass={"delete-btn btn-danger"}
-                        buttonText={"Remove Album"}
+                        buttonText={"Remove"}
                         onClick={() => this.handleDelete(album)} />
-                    <AllMusicLogo allMusicID={album.allMusicID} />
+                                            <AllMusicLogo allMusicID={album.allMusicID} />
                 </ButtonRow>
                 <AlbumDescription description={album.description} />
                 <AlbumTrackList text={"View Tracklist"} tracks={album.tracks} />

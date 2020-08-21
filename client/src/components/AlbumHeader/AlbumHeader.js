@@ -4,11 +4,10 @@ import React from 'react';
 
 function AlbumHeader(props) {
     return (
-        <div>
+        <div className="album-header">
             <h1>{props.title}</h1>
             <h2>{props.artist} </h2>
             <p>({props.year})</p>
-
         </div>
     )
 }

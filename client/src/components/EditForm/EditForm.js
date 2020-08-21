@@ -34,11 +34,11 @@ function EditForm(props) {
             {/* Submit and cancel buttons */}
             <ButtonRow>
                 <Button
-                    buttonClass={"save-btn btn-success"}
+                    buttonClass={"edit-btn btn-success"}
                     buttonText={"Submit"}
                     onClick={props.submitForm} />
                 <Button
-                    buttonClass={"back-btn btn-danger"}
+                    buttonClass={"cancel-btn btn-danger"}
                     buttonText={"Cancel"}
                     onClick={props.handleCancel} />
             </ButtonRow>

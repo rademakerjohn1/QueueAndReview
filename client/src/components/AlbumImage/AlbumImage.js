@@ -4,7 +4,7 @@ import React from 'react';
 
 function AlbumImage(props) {
     return (
-        <div className="col-sm-3 col-xs-12">
+        <div className="col-sm-4 col-lg-3 col-xs-12">
             <img 
                 className="card-img" 
                 alt="album art" 
