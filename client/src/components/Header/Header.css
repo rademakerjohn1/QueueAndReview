@@ -17,3 +17,13 @@
 .jumbotron h1 {
     font-weight: bold
 }
+
+@media screen and (max-width: 425px) {
+    .jumbotron h1 {
+        font-size: 4rem;
+    }
+
+    .jumbotron {
+        padding-bottom: 25px;
+    }
+}
