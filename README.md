@@ -87,7 +87,7 @@ $ npm test
 
 ## Built By
 
-* **John Rademaker**
+* John Rademaker
 
 ## License
 
