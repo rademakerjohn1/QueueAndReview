@@ -2,9 +2,11 @@
 
 Queue and Review is an album tracking application that allows the user to keep track of albums they want to listen to and store them in their personal library upon listening. The user can enter an artist name to view a list of albums released by that artist, including album art, title, release year, tracklists and any available descriptions and/or AllMusic paages for each album. The user can add an album to their own queue of albums to listen to.  Upon listening, the user can add the album to their library along with custom feedback, including the date listened, user review, user rating out of 5 stars, and up to 3 select tracks.
 
+**Deployed Application:** (https://queueandreview.herokuapp.com/)
+
+
 ![Alt text](./Queue-And-Review.png "Queue and Review Screenshot")
 
-**Deployed Application:** (https://queueandreview.herokuapp.com/)
 
 ## Getting Started
 
